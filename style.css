@@ -1,0 +1,194 @@
+/* Basic reset and font setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0099db 0%, #0068b5 50%, #003d75 100%);
+  text-align: center;
+  padding: 50px 32px; /* Top/Bottom, Left/Right spacing */
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Intel Logo */
+.intel-logo {
+  max-width: 100px;
+  margin-bottom: 25px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Large uppercase heading */
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Thin divider under heading */
+.hero-divider {
+  width: 100px;
+  height: 3px;
+  margin: 0 auto 24px; /* center the divider and add bottom spacing */
+  background-color: #00c7fd; /* a lighter blue that stands out on the dark bg */
+}
+
+/* Subheading / paragraph */
+.hero p {
+  font-size: 22px;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.caption {
+  font-size: 18px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1070px;
+}
+
+.columns {
+  max-width: 1080px;
+}
+
+/* Container for the cards */
+.timeline-container {
+  margin: 0 auto;
+  padding-top: 50px;
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 20px;
+  padding: 30px 12px; /* Add padding to avoid scrollbar overlap */
+  scroll-snap-type: x mandatory; /* Enable scroll snap */
+}
+
+/* Individual timeline card */
+.timeline-card {
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 20px;
+  min-width: 250px; /* Minimum width for each card */
+  height: 250px; /* Increase height for each card */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effects */
+  scroll-snap-align: start; /* Snap each card to the start */
+}
+.timeline-card h2 {
+  font-size: 26px; /* Slightly larger heading */
+  color: #143c7d;
+  margin: 0 0 10px;
+}
+.timeline-card h3 {
+  font-size: 20px; /* Slightly larger subheading */
+  margin: 0 0 10px;
+  color: #333;
+}
+/* Placeholder image */
+.card-image {
+  width: 100%;
+  height: 100%; /* Ensure the image fits within the card */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+}
+.timeline-card p {
+  font-size: 15.2px;
+  line-height: 1.5;
+  display: none; /* Hide paragraph by default */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 60, 116, 0.9); /* Update overlay color with rgba */
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  margin: 0;
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  transition: opacity 0.3s; /* Add transition for hover effects */
+}
+
+/* Hover effects */
+.timeline-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add a larger shadow */
+}
+.timeline-card:hover p {
+  display: block;
+  opacity: 1; /* Reveal the paragraph on hover */
+}
+
+/* Form & Button Styles */
+.form-control {
+  border-radius: 0;
+}
+
+.btn-primary {
+  background-color: #0099db; /* Match the blue in the hero background */
+  border-color: #0099db; /* Match the blue in the hero background */
+  border-radius: 0; /* Make buttons squared */
+}
+
+.btn-outline-primary {
+  color: #0099db; /* Match the blue in the hero background */
+  border-color: #0099db; /* Match the blue in the hero background */
+  border-radius: 0; /* Make buttons squared */
+}
+
+.btn-outline-primary:hover {
+color: white;
+background-color: #0099db; 
+}
+
+/* Subscription Form */
+.subscription-form h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .timeline-container {
+    flex-direction: column; /* Display as a column on narrow screens */
+    overflow-x: visible; /* Disable horizontal scrolling */
+    gap: 15px;
+    padding-top: 0;
+  }
+  .timeline-card {
+    width: 100%;
+    min-width: 100%; /* Full width for each card on smaller screens */
+    height: auto; /* Adjust height for smaller screens */
+  }
+  .two-cards {
+    flex-direction: column;
+  }
+  .caption {
+    margin-top: 0;
+  }
+}

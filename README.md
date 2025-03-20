@@ -1,1 +1,1 @@
-# 03-prj-intel-localization
+# Project 3: Localization
