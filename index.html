@@ -185,45 +185,7 @@
   <!-- Subscription Form -->
   <section>
     <h2>Subscribe to our Newsletter</h2>
-    <form action="#" method="post">
-      <div>
-        <div>
-          <!-- Hidden label for accessibility -->
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-        <div>
-          <button type="submit">Subscribe</button>
-        </div>
-      </div>
-    </form>
+    <!-- Add form here -->
   </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2025 Intel Corporation. All rights reserved.</p>
-  </footer>
-
-  <!-- JavaScript to detect Google Translate language change -->
-  <script>
-    function applyRtlIfNeeded() {
-      const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
-      const htmlElement = document.documentElement;
-      const lang = htmlElement.getAttribute('lang');
-
-      if (rtlLanguages.includes(lang)) {
-        htmlElement.setAttribute('dir', 'rtl');
-      } else {
-        htmlElement.setAttribute('dir', 'ltr');
-      }
-    }
-
-    // Observe changes to the lang attribute on the html element
-    const observer = new MutationObserver(applyRtlIfNeeded);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
-
-    // Initial check
-    applyRtlIfNeeded();
-  </script>
 </body>
 </html>
