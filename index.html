@@ -26,6 +26,11 @@
         to innovation has shaped a more sustainable future for technology 
         and our planet.
       </p>
+      <p>
+<button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#intelModal">
+  Learn More About Our Mission
+</button>
+
     </div>
   </header>
 
@@ -289,6 +294,27 @@
 
     document.addEventListener("mouseup", () => isDragging = false);
   </script>
+
+<!-- Modal -->
+<div class="modal fade" id="intelModal" tabindex="-1" aria-labelledby="intelModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="intelModalLabel">More About Intel's Sustainability</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Intel has been a pioneer in sustainable technology practices. From reducing emissions to innovating energy-efficient processors, our commitment continues to shape a cleaner tech future.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/sustainability.html" target="_blank" class="btn btn-primary">Visit Intel Sustainability</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap Bundle JS with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
