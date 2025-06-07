@@ -68,8 +68,10 @@ h1 {
   font-size: 0.98em; color: #333; background: #f0f8ff;
   border-radius: 6px; padding: 0 6px; margin-top: 8px;
 }
-.timeline-card.expanded .details {
-  opacity: 1; max-height: 200px; padding: 8px 6px;
+.timeline-card:hover .details {
+  opacity: 1;
+  max-height: 200px;
+  padding: 8px 6px;
 }
 
 /* --- ICONS --- */
