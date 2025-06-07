@@ -1,0 +1,159 @@
+/* Intel Timeline - Beginner-friendly CSS with Intel-inspired design */
+
+/* Header styles */
+header {
+  background-color: #0071c5; /* Intel blue */
+  color: white;
+  text-align: center;
+  padding: 32px 10px 24px 10px;
+  border-bottom: 4px solid #00baff; /* Accent line */
+}
+
+/* Intel logo */
+header img {
+  width: 120px;
+  margin-bottom: 18px;
+}
+
+/* Main Heading */
+h1 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 2em;
+  margin: 10px 0 8px 0;
+  letter-spacing: 1px;
+}
+
+/* Subheading / Description */
+header p {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1.15em;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #e6f2fa;
+}
+
+/* Timeline section */
+section {
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: row; /* Horizontal cards on large screens */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 24px; /* Space between cards */
+  padding: 28px 16px;
+  background: #e6f2fa;
+  scroll-snap-type: x mandatory; /* Smooth horizontal scroll snap */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+/* Timeline card styles */
+section > div {
+  background: #fff;
+  border-radius: 12px;
+  /* Darker and wider shadow for all cards */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0,0,0,0.18);
+  border: 2px solid #0071c5;
+  width: 250px;
+  min-width: 250px;
+  padding: 18px 14px 16px 14px;
+  flex-shrink: 0;
+  transition: box-shadow 0.3s, transform 0.3s; /* Smooth shadow and transform */
+  color: #222;
+  scroll-snap-align: start; /* Snap each card to the start */
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: relative;
+}
+
+/* Card hover effect: even darker and wider shadow */
+section > div:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.40), 0 8px 32px rgba(0,0,0,0.28);
+  transform: scale(1.05) translateY(-10px); /* Slightly bigger and moves up */
+  border-color: #00baff;
+}
+
+/* Card headings */
+section h2 {
+  color: #0071c5;
+  font-size: 1.2em;
+  margin: 0 0 2px 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+section h3 {
+  color: #222;
+  font-size: 1.05em;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+}
+
+/* Card images - all 9 cards use custom AI-generated images named 1.jpg to 9.jpg */
+section img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover; /* Fill the area, cropping if needed */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #e6f2fa;
+  border: 1px solid #cce6f7;
+}
+
+/* Show the lower half of img/7.jpg in the card */
+/* This makes the image fill the card and focuses on the bottom part */
+section img[src$="7.jpg"] {
+  object-fit: cover;      /* Fill the area, cropping if needed */
+  object-position: bottom;/* Focus on the lower half of the image */
+}
+
+/* Hide milestone details by default */
+.details {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s, max-height 0.3s;
+  font-size: 0.98em;
+  color: #333;
+  background: #f0f8ff;
+  border-radius: 6px;
+  padding: 0 6px;
+  margin-top: 8px;
+}
+
+/* Show details smoothly on hover */
+section > div:hover .details {
+  opacity: 1;
+  max-height: 200px;
+  padding: 8px 6px;
+}
+
+/* Responsive: Stack timeline vertically on small screens and make cards full width */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column;   /* Stack cards vertically */
+    gap: 18px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 16px 0;          /* Remove side padding for full width */
+  }
+  section > div {
+    width: 100%;              /* Card fills the available width */
+    min-width: 0;
+    box-sizing: border-box;   /* Include padding and border in width */
+    margin: 0;
+    border-radius: 0;
+    left: 0;
+    right: 0;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  section > div:hover {
+    transform: none;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  /* Show details on tap/active for mobile */
+  section > div:active .details,
+  section > div:focus .details {
+    opacity: 1;
+    max-height: 200px;
+    padding: 8px 6px;
+  }
+}
