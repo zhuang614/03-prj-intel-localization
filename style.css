@@ -225,21 +225,24 @@ h1 {
   right: 20px;
   width: 240px;
   background-color: white;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */ /* Remove or comment this line */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   z-index: 9999;
   cursor: move;
   border-radius: 6px;
 }
 
+
 #translate-header {
-  background-color: #f2f2f2;
+  background-color: #0071c5;
+  color: white; /* <-- Add this line */
   padding: 8px;
   font-weight: bold;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #0071c5;
   text-align: center;
   border-radius: 6px 6px 0 0;
 }
+
 
 /* Hide Google Translate default banners */
 .goog-te-banner-frame.skiptranslate,
