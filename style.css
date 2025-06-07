@@ -1,21 +1,19 @@
-/* Intel Timeline - Beginner-friendly CSS with Intel-inspired design */
+/* Intel Timeline - Clean, modern, responsive CSS */
 
 /* Header styles */
 header {
-  background-color: #0071c5; /* Intel blue */
+  background-color: #0071c5;
   color: white;
   text-align: center;
   padding: 32px 10px 24px 10px;
-  border-bottom: 4px solid #00baff; /* Accent line */
+  border-bottom: 4px solid #00baff;
 }
 
-/* Intel logo */
 header img {
   width: 120px;
   margin-bottom: 18px;
 }
 
-/* Main Heading */
 h1 {
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 2em;
@@ -23,54 +21,53 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* Subheading / Description */
 header p {
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1.15em;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   color: #e6f2fa;
 }
 
 /* Timeline section */
-section {
-  display: flex; /* Use Flexbox for layout */
-  flex-direction: row; /* Horizontal cards on large screens */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  gap: 24px; /* Space between cards */
+.timeline-scroll {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 24px;
   padding: 28px 16px;
   background: #e6f2fa;
-  scroll-snap-type: x mandatory; /* Smooth horizontal scroll snap */
-  scroll-behavior: smooth; /* Smooth scrolling effect */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 /* Timeline card styles */
-section > div {
+.timeline-card {
   background: #fff;
   border-radius: 12px;
-  /* Darker and wider shadow for all cards */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   border: 2px solid #0071c5;
   width: 250px;
   min-width: 250px;
+  max-width: 300px;
   padding: 18px 14px 16px 14px;
   flex-shrink: 0;
-  transition: box-shadow 0.3s, transform 0.3s; /* Smooth shadow and transform */
+  transition: box-shadow 0.3s, transform 0.3s;
   color: #222;
-  scroll-snap-align: start; /* Snap each card to the start */
+  scroll-snap-align: start;
   font-family: 'Segoe UI', Arial, sans-serif;
   position: relative;
+  z-index: 1;
 }
 
-/* Card hover effect: even darker and wider shadow */
-section > div:hover {
-  box-shadow: 0 16px 48px rgba(0,0,0,0.40), 0 8px 32px rgba(0,0,0,0.28);
-  transform: scale(1.05) translateY(-10px); /* Slightly bigger and moves up */
+.timeline-card.expanded {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.28);
   border-color: #00baff;
+  z-index: 10;
 }
 
 /* Card headings */
-section h2 {
+.timeline-card h2 {
   color: #0071c5;
   font-size: 1.2em;
   margin: 0 0 2px 0;
@@ -78,37 +75,34 @@ section h2 {
   letter-spacing: 0.5px;
 }
 
-section h3 {
+.timeline-card h3 {
   color: #222;
   font-size: 1.05em;
   margin: 0 0 10px 0;
   font-weight: normal;
 }
 
-/* Card images - all 9 cards use custom AI-generated images named 1.jpg to 9.jpg */
-section img {
+/* Card images */
+.timeline-card img {
   width: 100%;
   height: 140px;
-  object-fit: cover; /* Fill the area, cropping if needed */
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
   background: #e6f2fa;
   border: 1px solid #cce6f7;
 }
 
-/* Show the lower half of img/7.jpg in the card */
-/* This makes the image fill the card and focuses on the bottom part */
-section img[src$="7.jpg"] {
-  object-fit: cover;      /* Fill the area, cropping if needed */
-  object-position: bottom;/* Focus on the lower half of the image */
+.timeline-card img[src$="7.jpg"] {
+  object-position: bottom;
 }
 
-/* Hide milestone details by default */
-.details {
+/* Card details */
+.timeline-card .details {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.3s, max-height 0.3s;
+  transition: opacity 0.3s, max-height 0.3s, padding 0.3s;
   font-size: 0.98em;
   color: #333;
   background: #f0f8ff;
@@ -117,43 +111,235 @@ section img[src$="7.jpg"] {
   margin-top: 8px;
 }
 
-/* Show details smoothly on hover */
-section > div:hover .details {
+.timeline-card.expanded .details {
   opacity: 1;
   max-height: 200px;
   padding: 8px 6px;
 }
 
-/* Responsive: Stack timeline vertically on small screens and make cards full width */
+/* Icon column styles */
+.icon-col {
+  font-size: 2.1rem;
+  color: #0071c5;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Social media icon styles (single definition, not repeated) */
+.footer-social-link,
+.intel-footer-social .footer-social-link {
+  color: #fff !important;
+  font-size: 1.5em;
+  margin: 0 0.25rem;
+  display: inline-block;
+  transition: color 0.2s;
+}
+.footer-social-link:hover,
+.footer-social-link:focus,
+.intel-footer-social .footer-social-link:hover,
+.intel-footer-social .footer-social-link:focus {
+  color: #00baff !important;
+}
+
+/* Learn more link styles */
+.learn-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0071c5;
+  border: 1px solid #0071c5;
+  border-radius: 4px;
+  padding: 6px 18px;
+  background: #f8fbff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.learn-more-link:hover, .learn-more-link:focus {
+  background: #0071c5;
+  color: #fff;
+  border-color: #0071c5;
+  text-decoration: none;
+}
+
+/* Bottom bar styles */
+.bottom-bar-box {
+  background-color: #0071c5;
+  color: #fff;
+  border-top: 4px solid #00baff;
+  width: 100%;
+  margin: 0;
+  padding: 32px 10px 24px 10px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.bottom-bar-box .form-control {
+  border-radius: 4px;
+  border: 1px solid #cce6f7;
+}
+.bottom-bar-box .btn-light {
+  color: #0071c5;
+  background: #fff;
+  border: 1px solid #0071c5;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.bottom-bar-box .btn-light:hover, .bottom-bar-box .btn-light:focus {
+  background: #0071c5;
+  color: #fff;
+  border-color: #fff;
+}
+.bottom-bar-box .footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.bottom-bar-box .footer-link:hover, .bottom-bar-box .footer-link:focus {
+  color: #00baff;
+  text-decoration: underline;
+}
+.bottom-bar-box .footer-bar,
+.bottom-bar-box .subscription-bar {
+  background: transparent !important;
+  border: none !important;
+  color: #fff;
+}
+.bottom-bar-text {
+  font-size: 1.25em;
+  letter-spacing: 0.5px;
+}
+
+/* Footer styles */
+.intel-footer-blue {
+  background: #0071c5;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  border-top: 4px solid #00baff;
+}
+.intel-footer-nav {
+  font-size: 1.15em;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.intel-footer-nav .footer-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.2s;
+}
+.intel-footer-nav .footer-link:hover,
+.intel-footer-nav .footer-link:focus {
+  color: #00baff;
+  text-decoration: underline;
+}
+.intel-footer-social .footer-social-link {
+  color: #fff !important;
+  font-size: 1.5em;
+  margin: 0 0.25rem;
+  display: inline-block;
+  transition: color 0.2s;
+}
+.intel-footer-social .footer-social-link:hover,
+.intel-footer-social .footer-social-link:focus {
+  color: #00baff !important;
+}
+.intel-footer-logo img {
+  height: 40px;
+}
+.intel-footer-links {
+  color: #fff;
+}
+.intel-footer-links .footer-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.2rem;
+  transition: color 0.2s;
+}
+.intel-footer-links .footer-link:hover,
+.intel-footer-links .footer-link:focus {
+  color: #00baff;
+  text-decoration: underline;
+}
+.intel-footer-legal {
+  color: #e6f2fa;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+.intel-footer-blue input[type="checkbox"] {
+  accent-color: #00baff;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+/* Simple footer styles */
+.simple-footer {
+  background: transparent;
+  color: #fff;
+  padding-top: 1rem;
+}
+.simple-footer .footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.simple-footer .footer-link:hover,
+.simple-footer .footer-link:focus {
+  color: #00baff;
+  text-decoration: underline;
+}
+.simple-footer .small {
+  color: #e6f2fa;
+}
+.simple-footer img {
+  height: 40px;
+}
+
+/* Responsive: Stack timeline vertically on small screens */
 @media (max-width: 700px) {
-  section {
-    flex-direction: column;   /* Stack cards vertically */
+  .timeline-scroll {
+    flex-direction: column;
     gap: 18px;
     overflow-x: visible;
     scroll-snap-type: none;
-    padding: 16px 0;          /* Remove side padding for full width */
+    padding: 16px 0;
   }
-  section > div {
-    width: 100%;              /* Card fills the available width */
+  .timeline-card {
+    width: 100%;
     min-width: 0;
-    box-sizing: border-box;   /* Include padding and border in width */
+    box-sizing: border-box;
     margin: 0;
     border-radius: 0;
     left: 0;
     right: 0;
-    transition: box-shadow 0.3s, transform 0.3s;
   }
-  section > div:hover {
+  .timeline-card:hover {
     transform: none;
     width: 100%;
     left: 0;
     right: 0;
   }
-  /* Show details on tap/active for mobile */
-  section > div:active .details,
-  section > div:focus .details {
+  .timeline-card:active .details,
+  .timeline-card:focus .details {
     opacity: 1;
     max-height: 200px;
     padding: 8px 6px;
   }
 }
+@media (max-width: 768px) {
+  .intel-footer-nav {
+    font-size: 1em;
+    flex-wrap: wrap;
+  }
+  .intel-footer-logo img,
+  .simple-footer img {
+    height: 32px;
+  }
+  .intel-footer-links {
+    font-size: 0.95em;
+  }
+}
+
+/* Remove duplicate or redundant rules above this line */

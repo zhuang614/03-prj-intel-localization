@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Bootstrap CSS -->
+  <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header / Hero Section -->
-  <header>
+  <header class="text-center py-4">
     <div>
-      <!-- Intel logo as SVG -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
-      <!-- Subheading / Description -->
+      <img src="img/intel-header-logo.svg" alt="Intel Logo" class="mb-3" />
+      <h1>Sustainability Through the Ages</h1>
       <p>
         Explore Intel's journey through time, discovering how our commitment
         to innovation has shaped a more sustainable future for technology 
@@ -26,10 +23,10 @@
     </div>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <section>
-    <!-- Card 1: 1968 -->
-    <div>
+  <!-- Horizontal Scroll Timeline Section -->
+  <!-- Timeline: flexbox for horizontal scroll, works for both LTR and RTL -->
+  <section class="timeline-scroll">
+    <div class="timeline-card">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
       <img src="img/1.jpg" alt="Intel Founded" />
@@ -39,9 +36,7 @@
         decades of technological innovation.
       </p>
     </div>
-
-    <!-- Card 2: 1971 -->
-    <div>
+    <div class="timeline-card">
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
       <img src="img/2.jpg" alt="First Microprocessor" />
@@ -51,9 +46,7 @@
         of computing devices.
       </p>
     </div>
-
-    <!-- Card 3: 1978 -->
-    <div>
+    <div class="timeline-card">
       <h2>1978</h2>
       <h3>8086 Processor</h3>
       <img src="img/3.jpg" alt="8086 Processor" />
@@ -62,9 +55,7 @@
         that drives countless PCs and servers in the modern era.
       </p>
     </div>
-
-    <!-- Card 4: 1985 -->
-    <div>
+    <div class="timeline-card">
       <h2>1985</h2>
       <h3>386 Processor</h3>
       <img src="img/4.jpg" alt="386 Processor" />
@@ -74,9 +65,7 @@
         personal computers.
       </p>
     </div>
-
-    <!-- Card 5: 2006 -->
-    <div>
+    <div class="timeline-card">
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
       <img src="img/5.jpg" alt="Peak GHG Emissions" />
@@ -87,9 +76,7 @@
         manufacturing to reverse this trend.
       </p>
     </div>
-
-    <!-- Card 6: 2020 -->
-    <div>
+    <div class="timeline-card">
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
       <img src="img/6.jpg" alt="RISE Strategy" />
@@ -99,9 +86,7 @@
         progress on climate action, water stewardship, and waste reduction.
       </p>
     </div>
-
-    <!-- Card 7: 2022 -->
-    <div>
+    <div class="timeline-card">
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
       <img src="img/7.jpg" alt="Net-Zero By 2040" />
@@ -111,9 +96,7 @@
         by 2040, building on years of environmental initiatives.
       </p>
     </div>
-
-    <!-- Card 8: 2023 -->
-    <div>
+    <div class="timeline-card">
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
       <img src="img/8.jpg" alt="Renewable Electricity" />
@@ -123,9 +106,7 @@
         toward Intel's long-term sustainability goals.
       </p>
     </div>
-
-    <!-- Card 9: 2024 -->
-    <div>
+    <div class="timeline-card">
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
       <img src="img/9.jpg" alt="Sustainability Summit" />
@@ -136,6 +117,129 @@
       </p>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Timeline instructions text, placed right after timeline -->
+  <p class="text-center mb-4">Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Three-column section: Bootstrap grid for responsive layout -->
+  <section class="container my-5">
+    <div class="row text-center">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-globe2 icon-col"></i>
+            <h4 class="card-title mb-3">Global Impact</h4>
+            <p class="card-text">
+              Intel’s sustainability initiatives reach across the globe, driving positive change in communities and ecosystems.
+            </p>
+            <a href="#" class="learn-more-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-lightning-charge icon-col"></i>
+            <h4 class="card-title mb-3">Innovation</h4>
+            <p class="card-text">
+              Pioneering new technologies, Intel leads the way in energy efficiency and responsible manufacturing.
+            </p>
+            <a href="#" class="learn-more-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-people icon-col"></i>
+            <h4 class="card-title mb-3">Collaboration</h4>
+            <p class="card-text">
+              Working with partners, governments, and communities, Intel accelerates progress toward a sustainable future.
+            </p>
+            <a href="#" class="learn-more-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wrap subscription and footer in a blue box -->
+  <div class="bottom-bar-box text-center py-4">
+    <!-- Styled Subscription Form -->
+    <section class="subscription-bar bg-transparent text-center p-0 m-0 border-0">
+      <div class="container">
+        <h5 class="mb-3 text-white">
+          <i class="bi bi-envelope-paper-heart icon-col"></i>
+          Subscribe to Intel’s Sustainability Newsletter
+        </h5>
+        <form class="row justify-content-center g-2">
+          <div class="col-md-6 col-sm-8">
+            <input type="email" class="form-control" id="subscriberEmail" placeholder="name@example.com" required>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-light px-4">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer with logo, social media, and essential links -->
+    <footer class="simple-footer mt-4">
+      <div class="container">
+        <!-- Logo -->
+        <div class="mb-3">
+          <img src="img/intel-header-logo.svg" alt="Intel Logo">
+        </div>
+        <!-- Social Media Icons -->
+        <div class="mb-3">
+          <a href="https://www.facebook.com/intel" class="footer-social-link mx-1" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://twitter.com/intel" class="footer-social-link mx-1" target="_blank" rel="noopener" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.linkedin.com/company/intel-corporation/" class="footer-social-link mx-1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.youtube.com/user/channelintel" class="footer-social-link mx-1" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.instagram.com/intel/" class="footer-social-link mx-1" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+        <!-- Footer Links -->
+        <nav class="mb-2">
+          <a href="https://www.intel.com/content/www/us/en/company-overview/company-overview.html" class="footer-link mx-2" target="_blank" rel="noopener">Company Overview</a>
+          <a href="https://www.intel.com/content/www/us/en/support/contact-us.html" class="footer-link mx-2" target="_blank" rel="noopener">Contact</a>
+          <a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html" class="footer-link mx-2" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html" class="footer-link mx-2" target="_blank" rel="noopener">Cookie Notice</a>
+          <a href="https://www.intel.com/content/www/us/en/legal/terms-of-use.html" class="footer-link mx-2" target="_blank" rel="noopener">Terms of Use</a>
+        </nav>
+        <div class="small text-white mb-2">&copy; 2025 Intel Corporation. All rights reserved.</div>
+        <div class="small text-white-50">
+          Intel technologies may require enabled hardware, software or service activation. No product or component can be absolutely secure. Your costs and results may vary. See our
+          <a href="https://www.intel.com/content/www/us/en/legal/notices-and-disclaimers.html" class="footer-link" target="_blank" rel="noopener">Notices and Disclaimers</a>.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // RTL detection and Bootstrap CSS swap
+    const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+    const html = document.getElementById('html-root');
+    const lang = html.getAttribute('lang') || navigator.language || navigator.userLanguage || 'en';
+    const isRTL = rtlLangs.some(code => lang.startsWith(code));
+    html.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+    document.getElementById('bootstrap-css').setAttribute('href',
+      isRTL
+        ? 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.rtl.min.css'
+        : 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css'
+    );
+
+    // Only one card expands at a time on hover
+    document.querySelectorAll('.timeline-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        document.querySelectorAll('.timeline-card').forEach(c => c.classList.remove('expanded'));
+        card.classList.add('expanded');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('expanded');
+      });
+    });
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
